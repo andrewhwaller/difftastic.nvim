@@ -257,7 +257,7 @@ function M.show_overlay(bufnr)
 
     if #virt_text > 0 then
       vim.api.nvim_buf_set_extmark(bufnr, ns_id, insert_line, 0, {
-        virt_lines = {{ virt_text }},
+        virt_lines = { virt_text },
         virt_lines_above = virt_above,
       })
     end
@@ -312,7 +312,7 @@ function M.show_overlay(bufnr)
     end
 
     vim.api.nvim_buf_set_extmark(bufnr, ns_id, insert_at_line, 0, {
-      virt_lines = {{ {"  - " .. deletion.content, "DifftasticDeletedLine"} }},
+      virt_lines = { { {"  - " .. deletion.content, "DifftasticDeletedLine"} } },
       virt_lines_above = true,  -- Show above the current line
     })
   end

@@ -211,7 +211,7 @@ function M.show_split_diff(bufnr)
       local virt_above = diff_line.is_deletion
 
       pcall(vim.api.nvim_buf_set_extmark, bufnr, ns_id, target_line, 0, {
-        virt_lines = {{ virt_text }},
+        virt_lines = { virt_text },
         virt_lines_above = virt_above,
       })
     end
